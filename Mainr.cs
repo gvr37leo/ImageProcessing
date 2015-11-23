@@ -10,7 +10,10 @@ namespace ConsoleApplication2
         static void Main(string[] args)
         {
             //ImageProcessor ima = new ImageProcessor();
-            Bitmap imageIn = new Bitmap("C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/input.png");
+            String inputL = "C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/input.png";
+            String small = "C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/small.png";
+
+            Bitmap imageIn = new Bitmap(small);
             Bitmap imageOut;
             int[,] kernel =
             {
@@ -18,9 +21,11 @@ namespace ConsoleApplication2
                 {1,1,1},
                 {1,1,1}
             };
-            imageOut = ImageProcessor.blur(imageIn, ImageProcessor.generateKernel(4,1,1));
+            //imageOut = ImageProcessor.blur(imageIn, ImageProcessor.generateKernel(4,1,1));
             //imageOut = ImageProcessor.greyifi(imageIn);
-            imageOut.Save("C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/output.png");
+            //imageOut.Save("C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/output.png");
+            LockedImage image = new LockedImage(imageIn);
+            Debug.WriteLine(image.getPixel(0,0).R);
         }
     } 
 }

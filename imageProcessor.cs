@@ -24,6 +24,24 @@ namespace ConsoleApplication2
             return imageOut;
         }
 
+        public static Bitmap sobel(Bitmap image)
+        {
+            Bitmap imageOut = image;
+            int[,] xKernel =
+            {
+                {1,0,1},
+                {2,0,2},
+                {1,0,1}
+            };
+            int[,] yKernel =
+            {
+                {1,2,1},
+                {0,0,0},
+                {1,2,1}
+            };
+            return imageOut;
+        }
+
         public static Bitmap blur(Bitmap image, int[,] kernel)
         {
             Bitmap imageOut = image;

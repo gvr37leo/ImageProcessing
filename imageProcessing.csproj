@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageProcessor.cs" />
+    <Compile Include="LockedImage.cs" />
     <Compile Include="Mainr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
