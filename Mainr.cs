@@ -13,7 +13,7 @@ namespace ConsoleApplication2
             String inputL = "C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/input.png";
             String small = "C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/small.png";
 
-            Bitmap imageIn = new Bitmap(small);
+            Bitmap imageIn = new Bitmap(inputL);
             Bitmap imageOut;
             int[,] kernel =
             {
@@ -21,10 +21,12 @@ namespace ConsoleApplication2
                 {1,1,1},
                 {1,1,1}
             };
-            //imageOut = ImageProcessor.blur(imageIn, ImageProcessor.generateKernel(4,1,1));
+            //imageOut = ImageProcessor.blur(imageIn, ImageProcessor.generateKernel(4, 1, 1));
             //imageOut = ImageProcessor.greyifi(imageIn);
-            //imageOut.Save("C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/output.png");
             LockedImage image = new LockedImage(imageIn);
+            imageOut = image.returnSameImage(imageIn);
+            imageOut.Save("C:/Users/Gebruiker/Documents/visual studio 2015/Projects/ConsoleApplication2/ConsoleApplication2/output.png");
+            
             Debug.WriteLine(image.getPixel(0,0).R);
         }
     } 
